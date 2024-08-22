@@ -54,7 +54,7 @@ function sendMailSupport (email, description){
   return decoded
 }
 
-function sendMailErrorGPT (req, response){
+function sendMailErrorGPT (value, req, response){
   const decoded = new Promise((resolve, reject) => {
     var maillistbcc = [
       TRANSPORTER_OPTIONS.auth.user
@@ -67,6 +67,7 @@ function sendMailErrorGPT (req, response){
       subject: 'Mensaje para soporte de CatSalutGPT - Error GPT',
       template: 'mail_error_gpt/_es',
       context: {
+        value: JSON.stringify(value),
         info: JSON.stringify(req), 
         response: JSON.stringify(response)
       }
