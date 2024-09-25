@@ -323,12 +323,12 @@ function sendFeedback(req, res) {
   (async () => {
     try {
       blobOpenDx29Ctrl.createBlobFeedbackVoteDown(req.body);
-      Vote.findByIdAndUpdate(req.body.voteId, { description: req.body.description }, { new: true }, (err, voteUpdated) => {
+      Vote.findByIdAndUpdate(req.body.voteId, { description: req.body.info }, { new: true }, (err, voteUpdated) => {
         if (err || !voteUpdated) {
           insights.error(err);
           console.log(err)
           var msg = err || 'Error updating vote'
-          serviceEmail.sendMailErrorGeneral('Error sendFeedback',req.body.description, msg)
+          serviceEmail.sendMailErrorGeneral('Error sendFeedback',req.body.info, msg)
             .then(response => {
 
             })
@@ -340,7 +340,7 @@ function sendFeedback(req, res) {
         }
       })
       
-      serviceEmail.sendMailFeedback(req.body.email, req.body.description, req.body.myuuid)
+      serviceEmail.sendMailFeedback(req.body.email, req.body.info, req.body.myuuid)
         .then(response => {
 
         })
@@ -354,7 +354,7 @@ function sendFeedback(req, res) {
     } catch (e) {
       insights.error(e);
       console.error("Error sendFeedback: " + e)
-      serviceEmail.sendMailErrorGeneral('Error sendFeedback', req.body.description, e)
+      serviceEmail.sendMailErrorGeneral('Error sendFeedback', req.body.info, e)
         .then(response => {
 
         })
