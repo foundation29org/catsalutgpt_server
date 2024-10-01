@@ -2,7 +2,7 @@
 	<img align="right" width="100px" src="/img/logo-Dx29.png">
 </div>			
 
-CatSalutGPT server
+IASalutAjudaDx server
 ===============================================================================================================================
 
 >- [Sermas client](https://github.com/foundation29org/sermas_gpt_client2/)
