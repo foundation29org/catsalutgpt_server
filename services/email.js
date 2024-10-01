@@ -29,7 +29,7 @@ function sendMailSupport (email, description){
       to: TRANSPORTER_OPTIONS.auth.user,
       from: TRANSPORTER_OPTIONS.auth.user,
       bcc: maillistbcc,
-      subject: 'Mensaje para soporte de CatSalutGPT',
+      subject: 'Mensaje para soporte de IASalutAjudaDx',
       template: 'mail_support/_es',
       context: {
         email : email,
@@ -64,7 +64,7 @@ function sendMailErrorGPT (value, req, response){
       to: TRANSPORTER_OPTIONS.auth.user,
       from: TRANSPORTER_OPTIONS.auth.user,
       bcc: maillistbcc,
-      subject: 'Mensaje para soporte de CatSalutGPT - Error GPT',
+      subject: 'Mensaje para soporte de IASalutAjudaDx - Error GPT',
       template: 'mail_error_gpt/_es',
       context: {
         value: JSON.stringify(value),
@@ -100,7 +100,7 @@ function sendMailErrorGeneral (msg, req, response){
       to: TRANSPORTER_OPTIONS.auth.user,
       from: TRANSPORTER_OPTIONS.auth.user,
       bcc: maillistbcc,
-      subject: 'Mensaje para soporte de CatSalutGPT - Error GPT',
+      subject: 'Mensaje para soporte de IASalutAjudaDx - Error GPT',
       template: 'mail_error_general/_es',
       context: {
         msg: msg,
@@ -136,7 +136,7 @@ function sendMailFeedback (email, description, myuuid){
       to: TRANSPORTER_OPTIONS.auth.user,
       from: TRANSPORTER_OPTIONS.auth.user,
       bcc: maillistbcc,
-      subject: 'Mensaje para soporte de CatSalutGPT - Feedback Down',
+      subject: 'Mensaje para soporte de IASalutAjudaDx - Feedback Down',
       template: 'mail_feedback/_es',
       context: {
         email : email,
@@ -173,7 +173,7 @@ function sendMailGeneralFeedback (info, myuuid){
       to: TRANSPORTER_OPTIONS.auth.user,
       from: TRANSPORTER_OPTIONS.auth.user,
       bcc: maillistbcc,
-      subject: 'Mensaje para soporte de CatSalutGPT - Feedback General',
+      subject: 'Mensaje para soporte de IASalutAjudaDx - Feedback General',
       template: 'mail_general_feedback/_es',
       context: {
         myuuid: myuuid,
@@ -211,7 +211,7 @@ function sendMailControlCall (req){
       to: TRANSPORTER_OPTIONS.auth.user,
       from: TRANSPORTER_OPTIONS.auth.user,
       bcc: maillistbcc,
-      subject: 'Mensaje para soporte de CatSalutGPT - ControlCall',
+      subject: 'Mensaje para soporte de IASalutAjudaDx - ControlCall',
       template: 'mail_error_control_call/_es',
       context: {
         info: JSON.stringify(req)

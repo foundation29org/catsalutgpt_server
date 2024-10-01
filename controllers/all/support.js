@@ -10,7 +10,7 @@ const insights = require('../../services/insights')
 function sendMsg(req, res){
 	let support = new Support()
 	//support.type = 'Home form'
-	support.subject = 'CatSalutGPT support'
+	support.subject = 'IASalutAjudaDx support'
 	support.email = req.body.email
 	support.description = req.body.description
 	support.save((err, supportStored) => {
